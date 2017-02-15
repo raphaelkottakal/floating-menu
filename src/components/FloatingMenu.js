@@ -12,7 +12,7 @@ class FloatingMenu extends Component {
 
 	componentDidMount() {
 		
-		const y = 48;
+		const y = '100%';
 		const itemAnimationTime = 0.25;
 		const itemAnimationDelayTime = - itemAnimationTime / 2;
 
@@ -25,11 +25,11 @@ class FloatingMenu extends Component {
 		this.timeline = new TimelineLite({ paused: true });
 
 
-		this.timeline.to(this.refs.one, itemAnimationTime, { y: 0 });
-		this.timeline.to(this.refs.two, itemAnimationTime, { y: 0, delay: itemAnimationDelayTime });
-		this.timeline.to(this.refs.three, itemAnimationTime, { y: 0, delay: itemAnimationDelayTime });
-		this.timeline.to(this.refs.four, itemAnimationTime, { y: 0, delay: itemAnimationDelayTime });
-		this.timeline.to(this.refs.five, itemAnimationTime, { y: 0, delay: itemAnimationDelayTime });
+		this.timeline.to(this.refs.one, itemAnimationTime, { y: '0%' });
+		this.timeline.to(this.refs.two, itemAnimationTime, { y: '0%', delay: itemAnimationDelayTime });
+		this.timeline.to(this.refs.three, itemAnimationTime, { y: '0%', delay: itemAnimationDelayTime });
+		this.timeline.to(this.refs.four, itemAnimationTime, { y: '0%', delay: itemAnimationDelayTime });
+		this.timeline.to(this.refs.five, itemAnimationTime, { y: '0%', delay: itemAnimationDelayTime });
 	}
 
 	handelBtnClick() {
@@ -54,32 +54,35 @@ class FloatingMenu extends Component {
 				bottom: 0,
 				left: 0,
 				lineHeight: 0,
-				width: '100%'
+				width: '100%',
+				paddingLeft: 8,
+				paddingRight: 8
 			},
 			item: {
+				width: 100 / 6 + '%',
 				display: 'inline-block',
-				margin: '4px 7px',
+				padding: '16px 8px',
 				borderRadius: '50%'
 			},
 			btn: {
-				position: 'absolute',
-				bottom: 0,
-				right: 0,
-				margin: 4,
+				// position: 'absolute',
+				// bottom: 0,
+				// right: 0,
+				width: 100 / 6 + '%',
+				display: 'inline-block',
+				padding: '16px 8px',
 				borderRadius: '50%'
 			}
 		}
 
 		return (
 			<div style={css.wrapper}>
-				<div>
-					<img ref="one" style={css.item} src="http://placehold.it/40/FF8A80/000?text=1" alt="1" />
-					<img ref="two" style={css.item} src="http://placehold.it/40/FF8A80/000?text=2" alt="2" />
-					<img ref="three" style={css.item} src="http://placehold.it/40/FF8A80/000?text=3" alt="3" />
-					<img ref="four" style={css.item} src="http://placehold.it/40/FF8A80/000?text=4" alt="4" />
-					<img ref="five" style={css.item} src="http://placehold.it/40/FF8A80/000?text=5" alt="5" />
-				</div>
-				<img ref="btn" onClick={this.handelBtnClick.bind(this)} style={css.btn} src="http://placehold.it/40/F44336/fff?text=^" alt="btn" />
+				<img ref="one" style={css.item} src="http://placehold.it/140/FF8A80/000?text=1" alt="1" />
+				<img ref="two" style={css.item} src="http://placehold.it/140/FF8A80/000?text=2" alt="2" />
+				<img ref="three" style={css.item} src="http://placehold.it/140/FF8A80/000?text=3" alt="3" />
+				<img ref="four" style={css.item} src="http://placehold.it/140/FF8A80/000?text=4" alt="4" />
+				<img ref="five" style={css.item} src="http://placehold.it/140/FF8A80/000?text=5" alt="5" />
+				<img ref="btn" onClick={this.handelBtnClick.bind(this)} style={css.btn} src="http://placehold.it/140/F44336/fff?text=^" alt="btn" />
 			</div>
 		);
 	}
