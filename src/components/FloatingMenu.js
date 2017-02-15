@@ -65,9 +65,6 @@ class FloatingMenu extends Component {
 				borderRadius: '50%'
 			},
 			btn: {
-				// position: 'absolute',
-				// bottom: 0,
-				// right: 0,
 				width: 100 / 6 + '%',
 				display: 'inline-block',
 				padding: '16px 8px',
@@ -77,11 +74,21 @@ class FloatingMenu extends Component {
 
 		return (
 			<div style={css.wrapper}>
-				<img ref="one" style={css.item} src="http://placehold.it/140/FF8A80/000?text=1" alt="1" />
-				<img ref="two" style={css.item} src="http://placehold.it/140/FF8A80/000?text=2" alt="2" />
-				<img ref="three" style={css.item} src="http://placehold.it/140/FF8A80/000?text=3" alt="3" />
-				<img ref="four" style={css.item} src="http://placehold.it/140/FF8A80/000?text=4" alt="4" />
-				<img ref="five" style={css.item} src="http://placehold.it/140/FF8A80/000?text=5" alt="5" />
+				<a href="#one">
+					<img ref="one" style={css.item} src="http://placehold.it/140/FF8A80/000?text=1" alt="1" />
+				</a>
+				<a href="#two">
+					<img ref="two" style={css.item} src="http://placehold.it/140/FF8A80/000?text=2" alt="2" />
+				</a>
+				<a href="#three">
+					<img ref="three" style={css.item} src="http://placehold.it/140/FF8A80/000?text=3" alt="3" />
+				</a>
+				<a href="#four">
+					<img ref="four" style={css.item} src="http://placehold.it/140/FF8A80/000?text=4" alt="4" />
+				</a>
+				<a href="#five">
+					<img ref="five" style={css.item} src="http://placehold.it/140/FF8A80/000?text=5" alt="5" />
+				</a>
 				<img ref="btn" onClick={this.handelBtnClick.bind(this)} style={css.btn} src="http://placehold.it/140/F44336/fff?text=^" alt="btn" />
 			</div>
 		);
